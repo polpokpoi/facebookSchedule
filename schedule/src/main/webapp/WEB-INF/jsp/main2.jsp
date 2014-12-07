@@ -2,22 +2,40 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<link href='../fullcalendar.css' rel='stylesheet' />
-<link href='../fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='../lib/moment.min.js'></script>
-<script src='../lib/jquery.min.js'></script>
-<script src='../fullcalendar.min.js'></script>
+
+
+
+
+
+
+<link href='fullcalendar-2.1.1/fullcalendar.css' rel='stylesheet' />
+<link href='fullcalendar-2.1.1/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='fullcalendar-2.1.1/lib/moment.min.js'></script>
+<script src='fullcalendar-2.1.1/lib/jquery.min.js'></script>
+<script src='fullcalendar-2.1.1/fullcalendar.min.js'></script>
+<script src='myjs/function.js'></script>
+
+
+
+
+
 <script>
 
 	$(document).ready(function() {
-		
+	
+		    var today = new Date();
+			var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            
+            
 		$('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
+				right: 'month,basicWeek,basicDay'
 			},
-			defaultDate: '2014-09-12',
+			defaultDate: today,
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: [

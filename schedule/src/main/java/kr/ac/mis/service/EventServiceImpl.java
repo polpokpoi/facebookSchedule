@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("insertEventService")
-public class InsertEventServiceImpl implements InsertEventService {
+@Service("EventService")
+public class EventServiceImpl implements EventService {
    
 	@Autowired
 	private EventMapper eventMapper;

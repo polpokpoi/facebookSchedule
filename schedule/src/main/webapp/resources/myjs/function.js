@@ -28,7 +28,7 @@ function addEvent(start,end,title){
 	   					"start": start,
 	   				    "end": end
 	    				 };
-	    alert(start);  				 
+	    				 
 	   $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
 	  
 	  	/*	  
@@ -36,7 +36,7 @@ function addEvent(start,end,title){
 	          
         
 	   	$.ajax({
-	     url: '${pageContext.request.contextPath}/addEvent.html',
+	     url: '${pageContext.request.contextPath}/addEvent',
 	     type: "post",
 	     dataType: "json",
 	     contentType: "application/json",

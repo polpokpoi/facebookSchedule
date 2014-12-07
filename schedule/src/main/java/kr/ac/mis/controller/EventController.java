@@ -6,10 +6,12 @@ import java.util.List;
 
 
 
+
 import kr.ac.mis.model.Event;
-import kr.ac.mis.service.InsertEventService;
+import kr.ac.mis.service.EventService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,11 +23,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-@SessionAttributes("event")
+@SessionAttributes("user")
 public class EventController {
 	
 	@Autowired 
-	private InsertEventService eventService;
+	private EventService eventService;
 	
 	
 	@RequestMapping(value="/main", method=RequestMethod.GET)
@@ -38,10 +40,52 @@ public class EventController {
 		return "main";
 	}
 	
-	/*
-	@RequestMapping(value="/Events",
-			method=RequestMethod.GET,produces={"application/xml", "application/json"})
-    @ResponseStatus(HttpStatus.OK)
+
+	@RequestMapping(value="/main2", method=RequestMethod.GET)
+	public String signupd(Model model){
+		
+		
+	    List<Event> events = eventService.getEvents();
+		model.addAttribute("events",events); 
+		
+		return "main2";
+		
+		
+		
+		
+	}
+	
+	
+	@RequestMapping(value="/test", method=RequestMethod.GET)
+	public String signupd3(Model model){
+		
+		
+	    List<Event> events = eventService.getEvents();
+		model.addAttribute("events",events); 
+		
+		return "test";
+	}
+	
+	
+	@RequestMapping(value="/original", method=RequestMethod.GET)
+	public String signupd4(Model model){
+		
+		
+	    List<Event> events = eventService.getEvents();
+		model.addAttribute("events",events); 
+		
+		return "original";
+	}
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="/events",
+			method=RequestMethod.GET,produces={"application/xml", "application/json"})// guarantee the result type 
+    @ResponseStatus(value=HttpStatus.OK)//about exception handling
 	public @ResponseBody
 	List<Event> getUserEvents() {
 		
@@ -51,7 +95,8 @@ public class EventController {
 	}
 
 		
-		*/
+	   
+		
 	
 
 }
