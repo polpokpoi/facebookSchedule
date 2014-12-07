@@ -5,11 +5,12 @@ import static org.junit.Assert.*;
 import java.util.List;
 
 import kr.ac.mis.mapper.EventMapper;
+import kr.ac.mis.mapper.UserMapper;
 import kr.ac.mis.mapper.User_EventMapper;
 import kr.ac.mis.model.Event;
 
 
-import kr.ac.mis.service.InsertEventService;
+import kr.ac.mis.service.EventService;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,33 +34,37 @@ public class ServiceTest {
 	ApplicationContext ctx;
 	
     @Autowired
-    InsertEventService eventService;
+    EventService eventService;
     
     @Autowired
     User_EventMapper user_EventMapper;
     
+    @Autowired
+    EventMapper eventMapper;
+    
+    @Autowired
+    UserMapper userMapper;
+    
     
 	@Test
 	public void test() {
-		/*
-		Event event = new Event();
-		
-		event.setId(1121);
-		event.setTitle("dddd");
-		eventService.insertEvent(event);
-		
-		List<Event> events = eventService.getEvents();
-		
-		assertTrue(events.size()==3);
-		 */
 		
 		
-		user_EventMapper.insertUser_Event("1111", 1);
+		//user_EventMapper.insertUser_Event("1111", 1);
 		
+		//userMapper.getUserById("1111");
 		
+		//Event event = eventMapper.getEvents();
 		
+		List<Event> events = eventMapper.getEventsByUserId("1111");
 		
-		assertTrue(true);
+		Event event1 = new Event();
+		event1.setTitle(events.get(0).getTitle());
+		event1.setStart(events.get(0).getStart());
+		event1.setEnd(events.get(0).getEnd());
+		Integer id = eventMapper.getEventIdByAtts(event1);
+	    
+		assertTrue(id.intValue() == 1);
 		
 		
 		
