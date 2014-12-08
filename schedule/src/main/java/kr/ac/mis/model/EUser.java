@@ -12,14 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 
-public class User implements Serializable {
+public class EUser implements Serializable {
 
 	
 
 	private static final long serialVersionUID = 5191154850678391084L;
 
 
-	public  User(){}
+	public  EUser(){}
 	
 
 	

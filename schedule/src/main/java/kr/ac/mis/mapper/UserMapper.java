@@ -3,7 +3,7 @@ package kr.ac.mis.mapper;
 import java.util.List;
 
 import kr.ac.mis.model.Event;
-import kr.ac.mis.model.User;
+import kr.ac.mis.model.EUser;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
@@ -16,12 +16,12 @@ public interface UserMapper {
 	@Insert("INSERT INTO USER(id,name) VALUES" +
 			"(#{id},#{name})")
 	@Options(useGeneratedKeys=false, keyProperty="id", flushCache=true, keyColumn="id")
-	public void insertUser(User user);
+	public void insertUser(EUser eUser);
 	//WHAT IS the "flushCache"
 	
 	
 	@Select("SELECT id FROM user where id =#{id}")
-	public User getUserById(@Param("id")String id);
+	public EUser getUserById(@Param("id")String id);
 	
 	
 	

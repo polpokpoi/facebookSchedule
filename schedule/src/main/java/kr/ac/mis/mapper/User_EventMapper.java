@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import kr.ac.mis.model.Event;
-import kr.ac.mis.model.User;
+import kr.ac.mis.model.EUser;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;

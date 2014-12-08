@@ -2,7 +2,7 @@
 <html ng-app="calApp">
 	<head>
 		<title>Spring MVC + AngularJS Demo</title>
-		
+	
 		
 <link href='resources/fullcalendar-2.1.1/fullcalendar.css' rel='stylesheet' />
 <link href='resources/fullcalendar-2.1.1/fullcalendar.print.css' rel='stylesheet' media='print' />
@@ -14,6 +14,8 @@
 
 <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+  
+
     	
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.js"></script>
@@ -39,7 +41,7 @@
     	
     	calApp.controller('calController', function($scope, $http) {
     	   
-    	      	    $http.get('http://localhost:9090/event/events.json').
+    	      	    $http.get('http://polpokpoi.iptime.org:8282/event/events.json').
     	             success(function(data) {
     	        
     	            $scope.events = data;

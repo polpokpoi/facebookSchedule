@@ -7,7 +7,13 @@
 
 
 <dependencies>
-
+         
+         
+         <dependency>
+  			<groupId>com.restfb</groupId>
+  			<artifactId>restfb</artifactId>
+  			<version>1.6.11</version>
+  		</dependency>
 
         <dependency>
 			<groupId>junit</groupId>
@@ -114,7 +120,7 @@
 	  				<tmpDirectory>target/work</tmpDirectory>
 	  				<connectors>
 	  					<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-	  						<port>9090</port>
+	  						<port>8282</port>
 	  						<maxIdleTime>60000</maxIdleTime>
 	  					</connector>
 	  				</connectors>
